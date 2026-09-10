@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: dashboard-aggregator-service
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2500
+
+# Mock URL settings for microservices
+services:
+  order-service:
+    url: http://localhost:8081
+  product-service:
+    url: http://localhost:8082
+  user-service:
+    url: http://localhost:8083
